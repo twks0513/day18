@@ -27,7 +27,7 @@ public class Quiz02 {
 		File f01 = new File(path+num+".txt");
 		
 		while(bool) {
-			System.out.println("1.추가 2.수정 3.삭제 4.검색");
+			System.out.println("1.추가 2.수정 3.삭제 4.검색 5.종료");
 			System.out.print(">>> ");
 			int choice = scan.nextInt();
 			switch(choice) {
@@ -46,9 +46,10 @@ public class Quiz02 {
 					System.out.println("주소를 입력하세요");
 					System.out.print(">>> ");
 					addr = scan.next();
+					
 					st = new Student();
-					st.setName(num);
-					st.setNum(name);
+					st.setName(name);
+					st.setNum(num);
 					st.setAddr(addr);
 					File path02 = new File(path+num+".txt");
 					FileOutputStream fos = new FileOutputStream(path02);
@@ -145,6 +146,9 @@ public class Quiz02 {
 					ois.close(); bis.close(); fis.close();
 				}
 				break;
+			case 5:
+				System.out.println("프로그램을 종료합니다");
+				bool = false;
 			}
 		}
 	}
